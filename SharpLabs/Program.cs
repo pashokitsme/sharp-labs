@@ -1,6 +1,12 @@
-﻿using Labs;
+﻿using System.Text;
+using Labs;
 
-var labs = CollectLabs()!.ToList();
+Console.OutputEncoding = Encoding.UTF8;
+
+var labs = new List<ILab>
+{
+    new Lab1()
+};
 
 do
 {
@@ -56,13 +62,3 @@ ILab LabPicker(int min = 9)
     Utils.WriteLineCenter("Номер >>> ", newLine: false, Console.BufferHeight / 2 + Math.Abs(min - labs.Count));
     return int.TryParse(Console.ReadLine(), out var n) ? labs.FirstOrDefault(lab  => lab.Number == n) ?? new NoLab() : new NoLab();
 }
-
-IEnumerable<ILab> CollectLabs() =>
-    AppDomain.CurrentDomain.GetAssemblies()
-        .SelectMany(asm => asm
-            .GetTypes()
-            .Where(type => type.IsAssignableTo(typeof(ILab)) && !type.IsInterface)
-        )
-        .Select(type => Activator.CreateInstance(type) as ILab)
-        .Where(lab => lab is not null && lab.Number > 0)!
-        .OrderBy(lab => lab!.Number)!;
