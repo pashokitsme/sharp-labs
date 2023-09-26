@@ -4,7 +4,7 @@
     {
         Console.Clear();
         var count = output.Count();
-        if (Console.BufferHeight < count) throw new ArgumentException($"Для корректного отображения, размер консоли должен быть >{count}");
+        Console.SetCursorPosition(Console.CursorLeft, Math.Clamp(Console.BufferHeight / 2 - count / 2, 0, Console.BufferHeight));
         foreach (var line in output)
             WriteLineCenter(line, top: Console.BufferHeight / 2 - count--);
         Console.ReadKey();
@@ -13,7 +13,7 @@
     public static void WriteLineCenter(string output, bool newLine = true, int top = int.MaxValue)
     {
         if (top > Console.BufferHeight) top = Console.CursorTop;
-        Console.SetCursorPosition(Math.Clamp(Console.BufferWidth / 2 - output.Length / 2, 0, Console.BufferWidth), Math.Clamp(top, 0, Console.BufferHeight));
+        Console.SetCursorPosition(Math.Clamp(Console.BufferWidth / 2 - output.Length / 2, 0, Console.BufferWidth), top < Console.BufferHeight ? top : Console.CursorTop);
         if (newLine) Console.WriteLine(output);
         else Console.Write(output);
     }
