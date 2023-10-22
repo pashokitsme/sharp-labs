@@ -6,7 +6,8 @@ Console.OutputEncoding = Encoding.UTF8;
 var labs = new List<ILab>
 {
     new Lab1(),
-    new Lab2()
+    new Lab2(),
+    new Lab3(),
 };
 
 do
@@ -14,8 +15,16 @@ do
     Intro();
     var lab = LabPicker();
     Console.Clear();
-    Utils.WriteLineCenter($"Лабораторная работа {lab.Number}: {lab.Name}\n\n", top: 0);
-    lab?.Entry();
+    Utils.WriteLineCenter($"Лабораторная работа {lab.Number}: {lab.Name}\n\n", top: 0); 
+    var tasks = lab?.Entry();
+    if (tasks == null || tasks.Length == 0)
+        Utils.WriteLineCenter("Этой лабораторной ещё нет");
+
+    for (var i = 0; i < tasks?.Length; i++)
+    {
+        Utils.WriteLineCenter($"Задача {i + 1}");
+        tasks[i]();
+    }
 
     Console.WriteLine();
     Console.WriteLine();

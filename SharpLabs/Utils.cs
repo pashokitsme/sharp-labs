@@ -27,13 +27,14 @@
         Console.WriteLine(rhs);
     }
 
-    public static double ReadDouble(string welcome)
+    public static T Read<T>(string welcome)
+    where T : IParsable<T>
     {
-        double val;
+        T val;
         do
         {
             Console.Write(welcome + " > ");
-        } while (!double.TryParse(Console.ReadLine(), out val));
+        } while (!T.TryParse(Console.ReadLine(), default, out val));
 
         return val;
     }

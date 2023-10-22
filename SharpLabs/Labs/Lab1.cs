@@ -6,7 +6,7 @@ public class Lab1 : ILab
 
     public int Number => 1;
     
-    public void Entry()
+    public Action[] Entry()
     {
         const string text = """
                             У сильного всегда бессильный виноват:
@@ -51,6 +51,6 @@ public class Lab1 : ILab
                             Ты виноват уж тем, что хочется мне кушать».
                             Сказал — и в темный лес Ягнёнка поволок.
                             """;
-        Console.WriteLine(text);
+        return new[] { () => Console.WriteLine(text) };
     }
 }
