@@ -9,6 +9,11 @@ var labs = new List<ILab>
     new Lab2(),
     new Lab3(),
     new Lab4(),
+    new Lab5(),
+    // new Lab6(),
+    // new Lab7(),
+    // new Lab8(),
+    // new Lab9(),
 };
 
 do
@@ -58,7 +63,7 @@ void Intro()
 ILab LabPicker(int min = 9)
 {
     Console.Clear();
-    Utils.WriteLineCenter("Содержание", top: Console.BufferHeight / 2 - Math.Abs(min - labs.Count));
+    Utils.WriteLineCenter("Содержание", top: Console.BufferHeight / 2 - 9);
     var count = 1;
     foreach (var lab in labs)
         Utils.WriteDottedLine($"{lab.Number}) Лабораторная работа: {lab.Name}", $"{count++}");
@@ -70,6 +75,6 @@ ILab LabPicker(int min = 9)
     }
 
 
-    Utils.WriteLineCenter("Номер >>> ", newLine: false, Console.BufferHeight / 2 + Math.Abs(min - labs.Count));
+    Utils.WriteLineCenter("Номер >>> ", newLine: false, Console.CursorTop);
     return int.TryParse(Console.ReadLine(), out var n) ? labs.FirstOrDefault(lab  => lab.Number == n) ?? new NoLab() : new NoLab();
 }
