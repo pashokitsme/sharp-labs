@@ -5,7 +5,8 @@ Console.OutputEncoding = Encoding.UTF8;
 
 var labs = new List<ILab>
 {
-    new Lab1()
+    new Lab1(),
+    new Lab2()
 };
 
 do

@@ -26,4 +26,15 @@
             Console.Write('.');
         Console.WriteLine(rhs);
     }
+
+    public static double ReadDouble(string welcome)
+    {
+        double val;
+        do
+        {
+            Console.Write(welcome + " > ");
+        } while (!double.TryParse(Console.ReadLine(), out val));
+
+        return val;
+    }
 }
