@@ -38,4 +38,10 @@
 
         return val;
     }
+
+    public static string? Read(string welcome)
+    {
+        Console.Write(welcome + " > ");
+        return Console.ReadLine();
+    }
 }
