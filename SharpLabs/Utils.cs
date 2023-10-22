@@ -27,14 +27,14 @@
         Console.WriteLine(rhs);
     }
 
-    public static T Read<T>(string welcome)
+    public static T Read<T>(string welcome, Func<T, bool>? guard = null)
     where T : IParsable<T>
     {
         T val;
         do
         {
             Console.Write(welcome + " > ");
-        } while (!T.TryParse(Console.ReadLine(), default, out val));
+        } while (!(T.TryParse(Console.ReadLine(), default, out val) && (guard?.Invoke(val) ?? true)));
 
         return val;
     }

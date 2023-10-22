@@ -8,6 +8,7 @@ var labs = new List<ILab>
     new Lab1(),
     new Lab2(),
     new Lab3(),
+    new Lab4(),
 };
 
 do
