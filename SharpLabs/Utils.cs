@@ -6,7 +6,7 @@
         var count = output.Count();
         Console.SetCursorPosition(Console.CursorLeft, Console.BufferHeight / 2 - count / 2);
         foreach (var line in output)
-            WriteLineCenter(line, top: Console.BufferHeight / 2 - count--);
+            WriteLineCenter(line);
         Console.ReadKey();
     }
 
