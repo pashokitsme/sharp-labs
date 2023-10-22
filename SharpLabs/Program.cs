@@ -12,7 +12,7 @@ var labs = new List<ILab>
     new Lab5(),
     new Lab6(),
     new Lab7(),
-    // new Lab8(),
+    new Lab8(),
     // new Lab9(),
 };
 
