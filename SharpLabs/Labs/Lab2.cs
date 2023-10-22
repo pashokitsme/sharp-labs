@@ -13,8 +13,9 @@ public class Lab2 : ILab
 
     private static void Task1()
     {
-        var side = Utils.ReadDouble("Введите диагональ ромба");
-        var square = Math.Pow(side, 2) / 2;
+        var a = Utils.ReadDouble("Введите диагональ a");
+        var b = Utils.ReadDouble("Введите диагональ b");
+        var square = a * b / 2;
         Utils.WriteLineCenter($"Площадь ромба: {square:.2}");
     }
 
