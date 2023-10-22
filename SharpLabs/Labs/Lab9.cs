@@ -5,7 +5,7 @@ public class Lab9 : ILab
     public string Name { get; }
     public int Number { get; }
     
-    public Action[] Entry()
+    public Action[] Tasks()
     {
         throw new NotImplementedException();
     }

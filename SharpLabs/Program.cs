@@ -10,7 +10,7 @@ var labs = new List<ILab>
     new Lab3(),
     new Lab4(),
     new Lab5(),
-    // new Lab6(),
+    new Lab6(),
     // new Lab7(),
     // new Lab8(),
     // new Lab9(),
@@ -22,7 +22,7 @@ do
     var lab = LabPicker();
     Console.Clear();
     Utils.WriteLineCenter($"Лабораторная работа {lab.Number}: {lab.Name}\n\n", top: 0); 
-    var tasks = lab?.Entry();
+    var tasks = lab?.Tasks();
     if (tasks == null || tasks.Length == 0)
         Utils.WriteLineCenter("Этой лабораторной ещё нет");
 

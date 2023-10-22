@@ -5,7 +5,7 @@ public class Lab3 : ILab
     public string Name => "Условные конструкции";
     public int Number => 3;
     
-    public Action[] Entry() => new[] { Task1, Task2 };
+    public Action[] Tasks() => new[] { Task1, Task2 };
 
     private static void Task1()
     {

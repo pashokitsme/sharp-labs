@@ -6,7 +6,7 @@ public class Lab1 : ILab
 
     public int Number => 1;
     
-    public Action[] Entry()
+    public Action[] Tasks()
     {
         const string text = """
                             У сильного всегда бессильный виноват:

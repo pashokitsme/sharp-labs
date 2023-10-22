@@ -5,7 +5,7 @@ public class Lab2 : ILab
     public string Name => "Операторы ввода-вывода, математические функции";
     public int Number => 2;
     
-    public Action[] Entry() => new[] { Task1, Task2 };
+    public Action[] Tasks() => new[] { Task1, Task2 };
 
     private static void Task1()
     {

@@ -5,7 +5,7 @@ public class Lab4 : ILab
     public string Name => "Множественный выбор";
     public int Number => 4;
 
-    public Action[] Entry() => new[] { Task1 };
+    public Action[] Tasks() => new[] { Task1 };
 
     private static void Task1()
     {

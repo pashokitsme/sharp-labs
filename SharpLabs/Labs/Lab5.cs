@@ -4,7 +4,7 @@ public class Lab5 : ILab
 {
     public string Name => "Циклы, подпрограммы";
     public int Number => 5;
-    public Action[] Entry() => new[] { Task1, Task2 };
+    public Action[] Tasks() => new[] { Task1, Task2 };
 
     private static void Task1()
     {
