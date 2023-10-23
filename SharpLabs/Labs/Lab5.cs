@@ -11,7 +11,7 @@ public class Lab5 : ILab
         var a = Utils.Read<double>("Введите диагональ a");
         var b = Utils.Read<double>("Введите диагональ b");
         var square = a * b / 2;
-        Utils.WriteLineCenter($"Площадь ромба: {square:.2}");
+        Utils.WriteLineCenter($"Площадь ромба: {square:0.00}");
     }
 
     private static void Task2()
@@ -19,7 +19,7 @@ public class Lab5 : ILab
         var sum = 0;
         while (true)
         {
-            var val = Utils.Read<int>("Введите число, кратное 3", v => v % 3 == 0);
+            var val = Utils.Read<int>("Введите число, кратное 3", v => v % 3 == 0 || v < 0);
             if (val < 0) break;
             sum += val;
         }

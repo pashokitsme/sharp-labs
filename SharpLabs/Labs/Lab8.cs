@@ -14,7 +14,7 @@ public class Lab8 : ILab
         Utils.WriteLineCenter("Сгенерированный массив:");
         Utils.WriteLineCenter(string.Join(" ", arr));
         var min = Utils.Read<int>("Введите минимальное число");
-        Utils.WriteLineCenter($"Количество элементов <{min}: {arr.Where(x => x < min).Sum()}");
+        Utils.WriteLineCenter($"Количество элементов <{min}: {arr.Count(x => x < min)}");
 
         var color = Console.ForegroundColor;
         foreach (var val in arr)

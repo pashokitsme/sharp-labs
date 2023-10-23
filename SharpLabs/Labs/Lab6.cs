@@ -11,6 +11,6 @@ public class Lab6 : ILab
     {
         var x = Utils.Read<double>("Введите X", x => x >= 0);
         var y = Math.Log2(x + 1) / (x - 1) - 1;
-        Utils.WriteLineCenter($"Y равен: {y}");
+        Utils.WriteLineCenter($"Y равен: {y:0.00}");
     }
 }

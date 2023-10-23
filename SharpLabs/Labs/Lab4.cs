@@ -19,22 +19,22 @@ public class Lab4 : ILab
         switch (n)
         {
             case 1:
-                Utils.WriteLineCenter($"Сторона = {val}");
-                Utils.WriteLineCenter($"Периметр = {val * 3}");
-                Utils.WriteLineCenter($"Площадь = {Math.Sqrt(3) / 4 * Math.Pow(val, 2):.2}");
+                Utils.WriteLineCenter($"Сторона = {val:0.00}");
+                Utils.WriteLineCenter($"Периметр = {val * 3:0.00}");
+                Utils.WriteLineCenter($"Площадь = {Math.Sqrt(3) / 4 * Math.Pow(val, 2):0.00}");
                 return;
             
             case 2:
-                Utils.WriteLineCenter($"Сторона = {val / 3}");
-                Utils.WriteLineCenter($"Периметр = {val}");
-                Utils.WriteLineCenter($"Площадь = {Math.Sqrt(3) / 4 * Math.Pow(val / 3, 2):.2}");
+                Utils.WriteLineCenter($"Сторона = {val / 3:0.00}");
+                Utils.WriteLineCenter($"Периметр = {val:0.00}");
+                Utils.WriteLineCenter($"Площадь = {Math.Sqrt(3) / 4 * Math.Pow(val / 3, 2):0.00}");
                 return;
             
             case 3:
                 var side = Math.Sqrt(4 * val / Math.Sqrt(3));
-                Utils.WriteLineCenter($"Сторона = {side}");
-                Utils.WriteLineCenter($"Периметр = {side * 3}");
-                Utils.WriteLineCenter($"Площадь = {val:.2}");
+                Utils.WriteLineCenter($"Сторона = {side:0.00}");
+                Utils.WriteLineCenter($"Периметр = {side * 3:0.00}");
+                Utils.WriteLineCenter($"Площадь = {val:0.00}");
                 return;
         }
     }

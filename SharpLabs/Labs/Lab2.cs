@@ -12,7 +12,7 @@ public class Lab2 : ILab
         var a = Utils.Read<double>("Введите диагональ a");
         var b = Utils.Read<double>("Введите диагональ b");
         var square = a * b / 2;
-        Utils.WriteLineCenter($"Площадь ромба: {square:.2}");
+        Utils.WriteLineCenter($"Площадь ромба: {square:0.00}");
     }
 
     private static void Task2()
@@ -21,6 +21,6 @@ public class Lab2 : ILab
         var numerator = Math.Sin(Math.Sqrt(Math.Pow(Math.Abs(1 - x), 3))) + Math.Pow(Math.E, 2 - x);
         var denumerator = Math.Log(2 + Math.Pow(x, 3), 3) + Math.Tan(1 / x - 1);
         var y = numerator / denumerator * (2 - x);
-        Utils.WriteLineCenter($"Y равен: {y:.2}");
+        Utils.WriteLineCenter($"Y равен: {y:0.00}");
     }
 }
