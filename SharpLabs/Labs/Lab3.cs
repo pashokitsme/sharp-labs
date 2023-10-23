@@ -20,9 +20,7 @@ public class Lab3 : ILab
     {
         var val = Utils.Read<int>("Введите число");
         while (val < 1000)
-        {
             val = Utils.Read<int>("Это число не четырёхзначное. Введите число");
-        }
 
         var message = val % 100 == val / 100 ? "Первые 2 цифры равны последним двум" : "Первые две цифры не равны последним двум";
         Utils.WriteLineCenter(message);
