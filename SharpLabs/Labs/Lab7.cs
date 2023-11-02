@@ -27,9 +27,13 @@ public class Lab7 : ILab
 
         var val = Utils.Read("Введите строку");
         var res = new StringBuilder();
-        foreach (var part in val?.ToCharArray()!)
+        for (var index = 0; index < val.Length; index++)
+        {
+            var part = val[index];
+            if (part == ' ' && index < val.Length - 1 && val[index + 1] == ' ') continue;
             res.Append(values.TryGetValue(part, out var n) ? n : part);
-        
+        }
+
         Utils.WriteLineCenter($"Результат:");
         Utils.WriteLineCenter(res.ToString());
     }

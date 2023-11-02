@@ -8,10 +8,11 @@ public class Lab5 : ILab
 
     private static void Task1()
     {
-        var a = Utils.Read<double>("Введите диагональ a");
-        var b = Utils.Read<double>("Введите диагональ b");
-        var square = a * b / 2;
-        Utils.WriteLineCenter($"Площадь ромба: {square:0.00}");
+        const int b = 10;
+        var n = Utils.Read<int>("Введите N");
+        Utils.WriteLineCenter("Площадь ромба");
+        for (var i = 1; i <= n; i++)
+            Utils.WriteLineCenter($"a: {i}\tb: {b}\ts: {i * b / 2:0.00}");
     }
 
     private static void Task2()

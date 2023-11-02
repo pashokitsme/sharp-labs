@@ -34,7 +34,7 @@ public class Lab8 : ILab
         Utils.WriteLineCenter("Сгенерированный массив:");
         Utils.WriteLineCenter(string.Join(" ", arr));
         var k = Utils.Read<int>("Введите k", k => k < arr.Length - 1);
-        for (var i = 1; i <= k; i++)
+        for (var i = 0; i <= k; i++)
             arr[i] = 0;
         Utils.WriteLineCenter("Результат:");
         Utils.WriteLineCenter(string.Join(" ", arr.Reverse()));
