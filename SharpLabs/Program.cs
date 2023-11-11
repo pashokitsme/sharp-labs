@@ -23,7 +23,18 @@ var labs = new List<ILab>
     #if DAY_9_TASK_2
     new Lab1(),
     new Lab2(),
-    new Lab3()
+    new Lab3(),
+    new Lab4(),
+    new Lab5(),
+    new Lab6(),
+    new Lab7(),
+    new Lab8(),
+    new Lab9(),
+    new Lab10(),
+    new Lab11(),
+    new Lab12(),
+    new Lab13(),
+    new Lab14()
     #endif
 };
 
