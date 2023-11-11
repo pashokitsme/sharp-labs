@@ -26,7 +26,7 @@
     </PropertyGroup>
 
 
-    <PropertyGroup Condition=" '$(Configuration)' == 'Day 9 Task 1' ">
+    <PropertyGroup Condition=" '$(Configuration)' == 'Day 10' ">
       <DebugType>none</DebugType>
       <DefineConstants>DAY_10</DefineConstants>
     </PropertyGroup>

@@ -44,7 +44,7 @@ var labs = new List<ILab>
     #endif
     
     #if DAY_10
-    new Lab1(),
+    new Lab1()
     #endif
 };
 
