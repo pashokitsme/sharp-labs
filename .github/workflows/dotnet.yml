@@ -48,5 +48,5 @@ jobs:
       - name: Upload
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ matrix.target.artifact }}${{ matrix.target-os.ext }}
-          path: '**/bin/${{ matrix.target.name }}/net7.0/${{ matrix.target-os.name }}/publish/*${{ matrix.target-os.filename }}'
+          name: SharpLabs
+          path: '**/${{ matrix.target.name }}/net7.0/${{ matrix.target-os.name }}/publish/${{ matrix.target-os.filename }}'
