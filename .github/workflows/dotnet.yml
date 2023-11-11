@@ -49,7 +49,7 @@ jobs:
       - name: Pack
         run: |
           mkdir "${{ matrix.target-os.name }}"
-          mv "./SharpLabs/bin/${{ matrix.target.name }}/net7.0/${{ matrix.target-os.name }}/publish/${{ matrix.target-os.filename }}" "${{ matrix.target-os.name }}/SharpLabs.${{ matrix.target.name }}${{ matrix.target-os.ext }}"
+          mv "./SharpLabs/bin/${{ matrix.target.name }}/net7.0/${{ matrix.target-os.name }}/publish/${{ matrix.target-os.filename }}" "${{ matrix.target-os.name }}/${{ matrix.target.artifact }}${{ matrix.target-os.ext }}"
 
       - name: Upload
         uses: actions/upload-artifact@v3
