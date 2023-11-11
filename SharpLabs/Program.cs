@@ -1,6 +1,5 @@
 ﻿using System.Text;
 using Labs;
-using Labs.Day12;
 
 #if DAY_9_TASK_1
 using Labs.Day9Task1;
@@ -16,6 +15,10 @@ using Labs.Day10;
 
 #if DAY_11
 using Labs.Day11;
+#endif
+
+#if DAY_12
+using Labs.Day12;
 #endif
 
 Console.OutputEncoding = Encoding.UTF8;
