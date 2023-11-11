@@ -2,7 +2,7 @@ name: .NET
 
 on:
   push:
-    branches: ['master', 'practice']
+    branches: ['master']
 
 jobs:
   build:
