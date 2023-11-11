@@ -7,12 +7,17 @@
         <Nullable>enable</Nullable>
         <AssemblyName>SharpLabs</AssemblyName>
         <RootNamespace></RootNamespace>
-        <Configurations>Day 9 Task 1;Day 9 Task 2;Day 10;Day 11;Day 12</Configurations>
+        <Configurations>Day 9 Task 1;Day 9 Task 2;Day 10;Day 11;Day 12;General</Configurations>
         <Platforms>AnyCPU</Platforms>
     </PropertyGroup>
     
     <PropertyGroup>
         <Configuration>Day 9 Task 1</Configuration>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'General' ">
+      <DebugType>none</DebugType>
+      <DefineConstants>GENERAL</DefineConstants>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Day 9 Task 1' ">

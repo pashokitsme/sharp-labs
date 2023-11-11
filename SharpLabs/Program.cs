@@ -1,6 +1,10 @@
 ﻿using System.Text;
 using Labs;
 
+#if GENERAL
+using Labs.General;
+#endif
+
 #if DAY_9_TASK_1
 using Labs.Day9Task1;
 #endif
@@ -25,6 +29,18 @@ Console.OutputEncoding = Encoding.UTF8;
 
 var labs = new List<ILab>
 {
+#if GENERAL
+    new Lab1(),
+    new Lab2(),
+    new Lab3(),
+    new Lab4(),
+    new Lab5(),
+    new Lab6(),
+    new Lab7(),
+    new Lab8(),
+    new Lab9(),
+#endif
+
 #if DAY_9_TASK_1
     new Lab1(),
     new Lab2(),

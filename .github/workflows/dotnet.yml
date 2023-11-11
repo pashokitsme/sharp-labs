@@ -11,14 +11,21 @@ jobs:
     strategy:
       matrix:
         include:
+          - target: 'General'
+            artifact: 'SharpLabs.General.exe'
+
           - target: 'Day 9 Task 1'
             artifact: 'SharpLabs.Day9.Task1.exe'
+
           - target: 'Day 9 Task 2'
             artifact: 'SharpLabs.Day9.Task2.exe'
+
           - target: 'Day 10'
             artifact: 'SharpLabs.Day10.exe'
+
           - target: 'Day 11'
             artifact: 'SharpLabs.Day11.exe'
+
           - target: 'Day 12'
             artifact: 'SharpLabs.Day12.exe'
 
