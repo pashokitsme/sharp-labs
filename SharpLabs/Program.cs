@@ -13,18 +13,22 @@ using Labs.Day9Task2;
 using Labs.Day10;
 #endif
 
+#if DAY_11
+using Labs.Day11;
+#endif
+
 Console.OutputEncoding = Encoding.UTF8;
 
 var labs = new List<ILab>
 {
-    #if DAY_9_TASK_1
+#if DAY_9_TASK_1
     new Lab1(),
     new Lab2(),
     new Lab3(),
     new Lab4()
-    #endif
+#endif
     
-    #if DAY_9_TASK_2
+#if DAY_9_TASK_2
     new Lab1(),
     new Lab2(),
     new Lab3(),
@@ -39,12 +43,16 @@ var labs = new List<ILab>
     new Lab12(),
     new Lab13(),
     new Lab14()
-    #endif
+#endif
     
-    #if DAY_10
+#if DAY_10
     new Lab1(),
     new Lab2()
-    #endif
+#endif
+
+#if DAY_11
+    new Lab1()
+#endif
 };
 
 do
