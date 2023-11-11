@@ -19,6 +19,8 @@ jobs:
             artifact: 'SharpLabs.Day10.exe'
           - target: 'Day 11'
             artifact: 'SharpLabs.Day11.exe'
+          - target: 'Day 12'
+            artifact: 'SharpLabs.Day12.exe'
 
     steps:
       - uses: actions/checkout@v3

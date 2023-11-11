@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using Labs;
+using Labs.Day12;
 
 #if DAY_9_TASK_1
 using Labs.Day9Task1;
@@ -52,6 +53,12 @@ var labs = new List<ILab>
 
 #if DAY_11
     new Lab1()
+#endif
+
+#if DAY_12
+    new Lab1(),
+    new Lab2(),
+    new Lab3()
 #endif
 };
 
