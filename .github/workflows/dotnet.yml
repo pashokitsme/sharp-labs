@@ -14,9 +14,6 @@ jobs:
           - name: 'win-x64'
             filename: SharpLabs.exe
             ext: '.exe'
-          - name: 'osx-arm64'
-            filename: SharpLabs
-            ext: ''
 
         target:
           - name: 'General'
@@ -51,5 +48,5 @@ jobs:
       - name: Upload
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ matrix.target.artifact }}${{ matrix.target-os.name }}${{ matrix.target-os.ext }}
-          path: '**/bin/${{ matrix.target.name }}/net7.0/${{ matrix.target-os.name }}/publish/${{ matrix.target-os.filename }}'
+          name: ${{ matrix.target.artifact }}${{ matrix.target-os.ext }}
+          path: '**/bin/${{ matrix.target.name }}/net7.0/${{ matrix.target-os.name }}/publish/*${{ matrix.target-os.filename }}'
