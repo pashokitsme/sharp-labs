@@ -2,9 +2,7 @@ name: .NET
 
 on:
   push:
-    branches: ['master']
-  pull_request:
-    branches: ['master']
+    branches: ['master', 'practice']
 
 jobs:
   build:
@@ -26,6 +24,6 @@ jobs:
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           automatic_release_tag: latest
-          title: Latest build
+          title: 'Latest build (${{ github.ref_name }})'
           files: ./SharpLabs/bin/Release/net7.0/win-x64/publish/SharpLabs.exe
           prerelease: false
