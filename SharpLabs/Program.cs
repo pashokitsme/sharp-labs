@@ -13,8 +13,6 @@ using Labs.Day9Task2;
 using Labs.Day10;
 #endif
 
-
-
 Console.OutputEncoding = Encoding.UTF8;
 
 var labs = new List<ILab>
@@ -44,7 +42,8 @@ var labs = new List<ILab>
     #endif
     
     #if DAY_10
-    new Lab1()
+    new Lab1(),
+    new Lab2()
     #endif
 };
 
