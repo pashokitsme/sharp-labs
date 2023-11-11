@@ -7,32 +7,34 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: 'Build ${{ matrix.target-os.name }} ${{ matrix.target.target }}'
+    name: 'Build ${{ matrix.target-os.name }} ${{ matrix.target.name }}'
     strategy:
       matrix:
         target-os:
           - name: 'win-x64'
+            filename: SharpLabs.exe
             ext: '.exe'
           - name: 'osx-arm64'
+            filename: SharpLabs
             ext: ''
 
         target:
-          - target: 'General'
+          - name: 'General'
             artifact: 'SharpLabs.General'
 
-          - target: 'Day 9 Task 1'
+          - name: 'Day 9 Task 1'
             artifact: 'SharpLabs.Day9.Task1'
 
-          - target: 'Day 9 Task 2'
+          - name: 'Day 9 Task 2'
             artifact: 'SharpLabs.Day9.Task2'
 
-          - target: 'Day 10'
+          - name: 'Day 10'
             artifact: 'SharpLabs.Day10'
 
-          - target: 'Day 11'
+          - name: 'Day 11'
             artifact: 'SharpLabs.Day11'
 
-          - target: 'Day 12'
+          - name: 'Day 12'
             artifact: 'SharpLabs.Day12'
 
     steps:
@@ -44,10 +46,10 @@ jobs:
           dotnet-version: 7.0.x
 
       - name: Build
-        run: dotnet publish -c "${{ matrix.target.target }}" -f net7.0 -r ${{ matrix.target-os.name }} -p:PublishReadyToRun=true -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true
+        run: dotnet publish -c "${{ matrix.target.name }}" -f net7.0 -r ${{ matrix.target-os.name }} -p:PublishReadyToRun=true -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true
 
       - name: Upload
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ matrix.target.artifact }}${{ matrix.target-os.ext }}
-          path: '**/*/SharpLabs*'
+          name: ${{ matrix.target.artifact }}${{ matrix.target-os.name }}${{ matrix.target-os.ext }}
+          path: '**/bin/${{ matrix.target.name }}/.net7.0/${{ matrix.target-os.name }}/publish/${{ matrix.target-os.filename }}'
