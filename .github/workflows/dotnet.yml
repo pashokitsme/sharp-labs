@@ -16,7 +16,7 @@ jobs:
           - name: 'osx-arm64'
             ext: ''
 
-        include:
+        target:
           - target: 'General'
             artifact: 'SharpLabs.General'
 
@@ -44,10 +44,10 @@ jobs:
           dotnet-version: 7.0.x
 
       - name: Build
-        run: dotnet publish -c "${{ matrix.target }}" -f net7.0 -r ${{ matrix.target-os.name }} -p:PublishReadyToRun=true -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true
+        run: dotnet publish -c "${{ matrix.target.target }}" -f net7.0 -r ${{ matrix.target-os.name }} -p:PublishReadyToRun=true -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true
 
       - name: Upload
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ matrix.artifact }}${{ matrix.target-os.ext }}
+          name: ${{ matrix.target.artifact }}${{ matrix.target-os.ext }}
           path: '**/*/SharpLabs.exe'
