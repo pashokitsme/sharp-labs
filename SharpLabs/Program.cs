@@ -9,6 +9,12 @@ using Labs.Day9Task1;
 using Labs.Day9Task2;
 #endif
 
+#if DAY_10
+using Labs.Day10;
+#endif
+
+
+
 Console.OutputEncoding = Encoding.UTF8;
 
 var labs = new List<ILab>
@@ -35,6 +41,10 @@ var labs = new List<ILab>
     new Lab12(),
     new Lab13(),
     new Lab14()
+    #endif
+    
+    #if DAY_10
+    new Lab1(),
     #endif
 };
 

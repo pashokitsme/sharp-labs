@@ -5,7 +5,7 @@ on:
     branches: ['master', 'practice']
 
 jobs:
-  build:
+  build-day9-task1:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,18 +16,61 @@ jobs:
         with:
           dotnet-version: 7.0.x
 
-      - name: Build (Day 9 Task 1)
+      - name: Build
         run: dotnet publish -c "Day 9 Task 1" -f net7.0 -r win-x64 -p:PublishReadyToRun=true -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true
 
-      - name: Build (Day 9 Task 2)
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: SharpLabs.Day9.Task1.exe
+          path: '**/*/SharpLabs.exe'
+
+  build-day9-task2:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 7.0.x
+
+      - name: Build
         run: dotnet publish -c "Day 9 Task 2" -f net7.0 -r win-x64 -p:PublishReadyToRun=true -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true
 
-      - name: Publish
-        uses: marvinpinto/action-automatic-releases@v1.2.1
+      - name: Upload
+        uses: actions/upload-artifact@v3
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          automatic_release_tag: latest
-          title: 'Latest build (${{ github.ref_name }})'
-          files: './SharpLabs/bin/*/net7.0/win-x64/publish/SharpLabs.exe'
+          name: SharpLabs.Day9.Task2.exe
+          path: '**/*/SharpLabs.exe'
 
-          prerelease: false
+  build-day10:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 7.0.x
+
+      - name: Build
+        run: dotnet publish -c "Day 10" -f net7.0 -r win-x64 -p:PublishReadyToRun=true -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true
+
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: SharpLabs.Day10.exe
+          path: '**/*/SharpLabs.exe'
+
+    # - name: Publish
+    #   uses: marvinpinto/action-automatic-releases@v1.2.1
+    #   with:
+    #     repo_token: ${{ secrets.GITHUB_TOKEN }}
+    #     automatic_release_tag: latest
+    #     title: 'Latest build (${{ github.ref_name }})'
+    #     files: './SharpLabs/bin/*/net7.0/win-x64/publish/SharpLabs.exe'
+
+    #     prerelease: false
