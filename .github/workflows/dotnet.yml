@@ -7,12 +7,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: 'Build ${{ matrix.target }}'
+    name: 'Build ${{ matrix.target-os.name }} ${{ matrix.target.name }}'
     strategy:
       matrix:
         target-os:
           - name: 'win-x64'
-            ext: 'exe'
+            ext: '.exe'
           - name: 'osx-arm64'
             ext: ''
 
