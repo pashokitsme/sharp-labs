@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     name: 'Build ${{ matrix.target-os.name }} ${{ matrix.target.name }}'
     strategy:
+      fail-fast: true
       matrix:
         target-os:
           - name: 'win-x64'
