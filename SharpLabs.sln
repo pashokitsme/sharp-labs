@@ -6,11 +6,17 @@ Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+		Day 9 Task 1|Any CPU = Day 9 Task 1|Any CPU
+		Day 9 Task 2|Any CPU = Day 9 Task 2|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{4BC66BA3-F29D-46A0-A24D-BFFCCF187C49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4BC66BA3-F29D-46A0-A24D-BFFCCF187C49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BC66BA3-F29D-46A0-A24D-BFFCCF187C49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BC66BA3-F29D-46A0-A24D-BFFCCF187C49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BC66BA3-F29D-46A0-A24D-BFFCCF187C49}.Day 9 Task 1|Any CPU.ActiveCfg = Day 9 Task 1|Any CPU
+		{4BC66BA3-F29D-46A0-A24D-BFFCCF187C49}.Day 9 Task 1|Any CPU.Build.0 = Day 9 Task 1|Any CPU
+		{4BC66BA3-F29D-46A0-A24D-BFFCCF187C49}.Day 9 Task 2|Any CPU.ActiveCfg = Day 9 Task 2|Any CPU
+		{4BC66BA3-F29D-46A0-A24D-BFFCCF187C49}.Day 9 Task 2|Any CPU.Build.0 = Day 9 Task 2|Any CPU
 	EndGlobalSection
 EndGlobal

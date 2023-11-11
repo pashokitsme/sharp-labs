@@ -1,4 +1,4 @@
-namespace Labs;
+namespace Labs.Day9Task1;
 
 public class Lab2 : ILab
 {

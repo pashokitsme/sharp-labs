@@ -1,20 +1,37 @@
 ﻿using System.Text;
 using Labs;
 
+#if DAY_9_TASK_1
+using Labs.Day9Task1;
+#endif
+
+#if DAY_9_TASK_2
+using Labs.Day9Task2;
+#endif
+
 Console.OutputEncoding = Encoding.UTF8;
 
 var labs = new List<ILab>
 {
+    #if DAY_9_TASK_1
     new Lab1(),
     new Lab2(),
     new Lab3(),
     new Lab4()
+    #endif
+    
+    #if DAY_9_TASK_2
+    new Lab1(),
+    new Lab2(),
+    new Lab3()
+    #endif
 };
 
 do
 {
     var lab = LabPicker();
     Console.Clear();
+    Console.ResetColor();
     Utils.WriteLineCenter($"Лабораторная работа {lab.Number}: {lab.Name}", top: 0); 
     var tasks = lab?.Tasks();
     if (tasks == null || tasks.Length == 0)
@@ -42,6 +59,7 @@ ILab LabPicker()
         Utils.WriteDottedLine($"{lab.Number}) {lab.Name}", $"{count++}", pad: 10);
 
 
+    Console.Write("\n\n");
     Utils.WriteLineCenter("Номер >>> ", newLine: false, Console.CursorTop);
     return int.TryParse(Console.ReadLine(), out var n) ? labs.FirstOrDefault(lab  => lab.Number == n) ?? new NoLab() : new NoLab();
 }
