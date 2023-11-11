@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
@@ -28,8 +28,6 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           automatic_release_tag: latest
           title: 'Latest build (${{ github.ref_name }})'
-          files: |
-            './SharpLabs/bin/Day 9 Task 1/net7.0/win-x64/publish/SharpLabs.exe'
-            './SharpLabs/bin/Day 9 Task 2/net7.0/win-x64/publish/SharpLabs.exe'
+          files: './SharpLabs/bin/*/net7.0/win-x64/publish/SharpLabs.exe'
 
           prerelease: false
