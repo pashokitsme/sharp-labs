@@ -5,7 +5,7 @@ public class Lab1 : ILab
     public string Name =>
         "Дан текстовый файл (файл text.txt должен содержать английский текст). Напечатать все нечетные строки";
 
-    public int Number => 1;
+    public int Number => 1; 
 
     public Action[] Tasks() => new[] { Task1 };
 

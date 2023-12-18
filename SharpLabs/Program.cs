@@ -39,6 +39,8 @@ var labs = new List<ILab>
     new Lab7(),
     new Lab8(),
     new Lab9(),
+    new Lab10(),
+    new Lab11(),
 #endif
 
 #if DAY_9_TASK_1
