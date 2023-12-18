@@ -2,19 +2,29 @@ using System.Text.Json;
 
 namespace Labs.General;
 
-public struct Phone
+public struct Toy
 {
     public int Id;
     public string Model;
     public string Manufacturer;
+    public string Material;
+    public int Year;
+    public int Amount;
     public int Price;
 
-    public static Phone ReadStdin()
+    public static Toy ReadStdin()
     {
         var model = Utils.Read("Введите название модели")!;
         var manufacturer = Utils.Read("Введите производителя")!;
+        var material = Utils.Read("Введите материал")!;
+        var year = Utils.Read<int>("Введите год");
+        var amount = Utils.Read<int>("Введите количество");
         var price = Utils.Read<int>("Введите цену");
-        return new Phone { Id = model.GetHashCode() + manufacturer.GetHashCode() + price, Model = model, Manufacturer = manufacturer, Price = price };
+        return new Toy
+        {
+            Id = model.GetHashCode() + manufacturer.GetHashCode() + price + amount + year + material.GetHashCode(),
+            Model = model, Manufacturer = manufacturer, Price = price, Amount = amount, Material =  material, Year = year
+        };
     }
 
     public override string ToString() => $"Id: {Id} - {Model} {Manufacturer}, {Price}р";
@@ -31,29 +41,32 @@ public class Lab11 : ILab
     private static void Task1()
     {
         Utils.WriteLineCenter("Запись файла");
-        using var writer = new StreamWriter("phones.lab11.json", true);
+        using var writer = new StreamWriter("toys.lab11.json", true);
         do
         {
-            var phone = Phone.ReadStdin();
-            writer.Write(JsonSerializer.Serialize(phone));
-        } while (Utils.Read("Добавить ещё один телефон? y/n") == "y");
+            var toy = Toy.ReadStdin();
+            writer.Write(JsonSerializer.Serialize(toy));
+        } while (Utils.Read("Добавить ещё одну игрушку? y/n") == "y");
+
         writer.Flush();
     }
 
     private static void Task2()
     {
         Utils.WriteLineCenter("Чтение файла");
-        var manufacturer = Utils.Read("Производитель?");
-        var money = Utils.Read<int>("Бюджет?");
-        
-        using var reader = new StreamReader("phones.lab11.json");
-        while(true)
+        var year = Utils.Read<int>("Год?");
+
+        using var reader = new StreamReader("toys.lab11.json");
+        var total = 0;
+        while (true)
         {
             var line = reader.ReadLine();
             if (line is null) break;
-            var phone = JsonSerializer.Deserialize<Phone>(line);
-            if (phone.Price <= money && phone.Manufacturer == manufacturer)
-                Utils.WriteLineCenter(phone.ToString());
+            var toy = JsonSerializer.Deserialize<Toy>(line);
+            total += toy.Price;
+            if (toy.Year == year && toy.Material == "Дерево")
+                Utils.WriteLineCenter(toy.ToString());
         }
+        Utils.WriteLineCenter($"Суммарная цена: {total}");
     }
 }
